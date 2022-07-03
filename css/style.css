@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.header__tabs {
+    margin-top: 100px;
+}
+
+.all, .html, .css, .js {
+    display: inline-block;
+    position: relative;
+    font-size: 40px;
+    font-family: sans-serif;
+    transition: .2s linear;
+}
+
+.all:hover,
+.html:hover,
+.css:hover,
+.js:hover {
+    color: red;
+}
+
+.all::before,
+.html::before,
+.css::before,
+.js::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background: red;
+    transition: .5s;
+}
+
+.all:hover::before,
+.html:hover::before,
+.css:hover::before,
+.js:hover::before {
+    width: 100%;
+}
+
+.btn-tabs {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tabs-pic {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+#all, #html, #css, #js {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+}
+
+.html-item, .css-item, .js-item {
+    width: 250px;
+    height: 250px;
+}
+
+#html:checked ~ .css-item,
+#html:checked ~ .js-item {
+    display: none;
+}
+
+#css:checked ~ .html-item,
+#css:checked ~ .js-item {
+    display: none;
+}
+
+#js:checked ~ .css-item,
+#js:checked ~ .html-item {
+    display: none;
+}
+
+
